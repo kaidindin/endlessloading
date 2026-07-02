@@ -3,11 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>読み込み中... | 終わらないローディング</title>
-<meta name="description" content="永遠に終わらないローディング画面。何分耐えられるか世界ランキングに挑戦。カイディンディン制作の無駄サイト。">
-<meta property="og:title" content="終わらないローディング / The Endless Loading">
+<title>読み込み中... | 永久ローディング</title>
+<meta name="description" content="永久ローディング - 永遠に終わらない読み込み画面。進捗は99%で止まります。何分待てるか世界ランキングに挑戦できる、お笑い芸人カイディンディン制作の無駄サイト。">
+<meta property="og:title" content="永久ローディング / The Endless Loading">
 <meta property="og:description" content="99%から先には進みません。あなたは何分待てますか?">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://kaidindin.github.io/endlessloading/">
+<link rel="canonical" href="https://kaidindin.github.io/endlessloading/">
+<meta name="google-site-verification" content="tl6zSfZbgY7SJdKggf4uat4GSaNCkeOe48HiajlPHsE">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "永久ローディング",
+  "alternateName": "The Endless Loading",
+  "url": "https://kaidindin.github.io/endlessloading/",
+  "description": "永遠に終わらない読み込み画面。何分待てるか世界ランキングに挑戦できる無駄サイト。",
+  "author": { "@type": "Person", "name": "カイディンディン" }
+}
+</script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -326,7 +340,7 @@
 </div>
 
 <div class="toast" id="toast"></div>
-<div class="credit">© カイディンディン — このサイトに実用性はありません / This site serves no purpose</div>
+<div class="credit">「永久ローディング」© カイディンディン — このサイトに実用性はありません / This site serves no purpose</div>
 
 <script>
 (function () {
@@ -638,7 +652,7 @@
     loadingScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     recordTime.textContent = fmt(finalSeconds);
-    document.title = 'ギブアップ | 終わらないローディング';
+    document.title = 'ギブアップ | 永久ローディング';
   });
 
   // ---------- Supabase(REST API直叩き) ----------
@@ -766,10 +780,10 @@
     var url = SITE_URL || location.href;
     var rankText = myRank ? '(世界' + myRank + '位)' : '';
     var text =
-      '【終わらないローディング】\n' +
+      '【永久ローディング】\n' +
       fmtJp(finalSeconds) + '待ってギブアップしました' + rankText + '\n' +
       'あなたは何分待てますか?\n' +
-      '#終わらないローディング';
+      '#永久ローディング';
     var intent = 'https://x.com/intent/post?text=' +
       encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
     window.open(intent, '_blank');
@@ -779,10 +793,10 @@
 
   // タブのタイトルもたまに変える
   var titles = [
-    '読み込み中... | 終わらないローディング',
-    'まだです | 終わらないローディング',
-    'あと1% | 終わらないローディング',
-    '(99%) 終わらないローディング'
+    '読み込み中... | 永久ローディング',
+    'まだです | 永久ローディング',
+    'あと1% | 永久ローディング',
+    '(99%) 永久ローディング'
   ];
   setInterval(function () {
     if (!gameOver) document.title = pick(titles);
