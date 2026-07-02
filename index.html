@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#ffffff">
 <title>読み込み中... | 永久ローディング</title>
 <meta name="description" content="永久ローディング - 永遠に終わらない読み込み画面。進捗は99%で止まります。何分待てるか世界ランキングに挑戦できる、お笑い芸人カイディンディン制作の無駄サイト。">
 <meta property="og:title" content="永久ローディング / The Endless Loading">
@@ -27,8 +28,8 @@
 
   html, body {
     height: 100%;
-    background: #0d1117;
-    color: #c9d1d9;
+    background: #ffffff;
+    color: #3c4257;
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
     overflow: hidden;
     -webkit-user-select: none;
@@ -51,7 +52,7 @@
   .spinner {
     width: 44px;
     height: 44px;
-    border: 4px solid #21262d;
+    border: 4px solid #e5e7eb;
     border-top-color: #58a6ff;
     border-radius: 50%;
     animation: spin 0.9s linear infinite;
@@ -65,7 +66,7 @@
   .bar-wrap { width: 100%; max-width: 340px; }
   .bar-track {
     width: 100%; height: 10px;
-    background: #21262d; border-radius: 5px; overflow: hidden;
+    background: #e5e7eb; border-radius: 5px; overflow: hidden;
   }
   .bar-fill {
     height: 100%; width: 0%;
@@ -81,7 +82,7 @@
     margin-top: 10px; text-align: center;
     font-size: 28px; font-weight: 600;
     font-variant-numeric: tabular-nums;
-    color: #f0f6fc;
+    color: #111827;
   }
 
   .status {
@@ -89,11 +90,11 @@
     min-height: 58px;
     max-width: 340px;
   }
-  .status-jp { font-size: 15px; color: #8b949e; line-height: 1.6; }
-  .status-en { font-size: 12px; color: #484f58; font-style: italic; margin-top: 4px; line-height: 1.5; }
+  .status-jp { font-size: 15px; color: #6b7280; line-height: 1.6; }
+  .status-en { font-size: 12px; color: #9ca3af; font-style: italic; margin-top: 4px; line-height: 1.5; }
 
   .elapsed {
-    font-size: 12px; color: #484f58;
+    font-size: 12px; color: #9ca3af;
     font-variant-numeric: tabular-nums;
   }
 
@@ -108,8 +109,8 @@
 
   .cancel {
     background: none;
-    border: 1px solid #30363d;
-    color: #8b949e;
+    border: 1px solid #d1d5db;
+    color: #6b7280;
     padding: 10px 28px;
     transition: border-color 0.2s;
   }
@@ -118,7 +119,7 @@
   .rank-view-btn {
     background: none;
     border: none;
-    color: #484f58;
+    color: #9ca3af;
     font-size: 13px;
     padding: 6px 12px;
     text-decoration: underline;
@@ -128,14 +129,15 @@
   /* モーダル共通 */
   .overlay {
     position: fixed; inset: 0;
-    background: rgba(1, 4, 9, 0.75);
+    background: rgba(17, 24, 39, 0.45);
     display: flex; align-items: center; justify-content: center;
     padding: 24px;
     z-index: 10;
   }
   .modal {
-    background: #161b22;
-    border: 1px solid #30363d;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    background: #ffffff;
+    border: 1px solid #d1d5db;
     border-radius: 14px;
     padding: 26px 22px;
     max-width: 320px;
@@ -146,9 +148,9 @@
     flex-direction: column;
     gap: 14px;
   }
-  .modal h2 { font-size: 17px; color: #f0f6fc; }
-  .modal .en { font-size: 12px; color: #484f58; font-style: italic; margin-top: -8px; }
-  .modal p { font-size: 13px; color: #8b949e; line-height: 1.7; }
+  .modal h2 { font-size: 17px; color: #111827; }
+  .modal .en { font-size: 12px; color: #9ca3af; font-style: italic; margin-top: -8px; }
+  .modal p { font-size: 13px; color: #6b7280; line-height: 1.7; }
   .modal-btns { display: flex; gap: 10px; }
   .btn-stay {
     flex: 1; padding: 12px 0;
@@ -156,32 +158,32 @@
   }
   .btn-giveup {
     flex: 1; padding: 12px 0;
-    background: none; border: 1px solid #30363d; color: #8b949e;
+    background: none; border: 1px solid #d1d5db; color: #6b7280;
   }
   .btn-giveup:active { border-color: #f85149; color: #f85149; }
   .btn-close {
     padding: 11px 0;
-    background: none; border: 1px solid #30363d; color: #8b949e;
+    background: none; border: 1px solid #d1d5db; color: #6b7280;
     width: 100%;
   }
 
   /* 結果画面 */
-  .result-title { font-size: 22px; font-weight: 700; color: #f0f6fc; text-align: center; }
-  .result-sub { font-size: 12px; color: #484f58; font-style: italic; text-align: center; margin-top: 4px; }
+  .result-title { font-size: 22px; font-weight: 700; color: #111827; text-align: center; }
+  .result-sub { font-size: 12px; color: #9ca3af; font-style: italic; text-align: center; margin-top: 4px; }
   .record {
-    font-size: 40px; font-weight: 700; color: #58a6ff;
+    font-size: 40px; font-weight: 700; color: #2563eb;
     font-variant-numeric: tabular-nums;
     text-align: center;
   }
-  .record-label { font-size: 12px; color: #8b949e; text-align: center; }
+  .record-label { font-size: 12px; color: #6b7280; text-align: center; }
 
   .btn-col { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 300px; }
   .nick-input {
     width: 100%;
-    background: #0d1117;
-    border: 1px solid #30363d;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
     border-radius: 8px;
-    color: #f0f6fc;
+    color: #111827;
     padding: 12px 14px;
     font-size: 16px;
     font-family: inherit;
@@ -195,20 +197,20 @@
   .btn-submit:disabled { opacity: 0.5; cursor: default; }
   .btn-x {
     padding: 13px 0;
-    background: #000; border: 1px solid #30363d; color: #fff; font-weight: 600;
+    background: #000; border: 1px solid #d1d5db; color: #fff; font-weight: 600;
   }
   .btn-retry {
     padding: 11px 0;
-    background: none; border: 1px solid #30363d; color: #8b949e;
+    background: none; border: 1px solid #d1d5db; color: #6b7280;
   }
 
-  .rank-note { font-size: 13px; color: #8b949e; text-align: center; line-height: 1.7; }
+  .rank-note { font-size: 13px; color: #6b7280; text-align: center; line-height: 1.7; }
 
   /* ランキングリスト */
   .ranking {
     width: 100%;
     overflow-y: auto;
-    border: 1px solid #21262d;
+    border: 1px solid #e5e7eb;
     border-radius: 10px;
     text-align: left;
     -webkit-overflow-scrolling: touch;
@@ -219,25 +221,26 @@
     display: flex; align-items: center;
     padding: 9px 14px;
     font-size: 14px;
-    border-bottom: 1px solid #161b22;
+    border-bottom: 1px solid #f3f4f6;
     gap: 10px;
   }
   .rank-row:last-child { border-bottom: none; }
-  .rank-row.me { background: #12261e; color: #7ee2a8; }
-  .rank-pos { width: 34px; color: #484f58; font-variant-numeric: tabular-nums; flex-shrink: 0; }
-  .rank-row.me .rank-pos { color: #7ee2a8; }
+  .rank-row.me { background: #ecfdf5; color: #059669; }
+  .rank-pos { width: 34px; color: #9ca3af; font-variant-numeric: tabular-nums; flex-shrink: 0; }
+  .rank-row.me .rank-pos { color: #059669; }
   .rank-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .rank-time { font-variant-numeric: tabular-nums; color: #8b949e; flex-shrink: 0; }
-  .rank-row.me .rank-time { color: #7ee2a8; }
-  .rank-empty { padding: 20px; font-size: 13px; color: #484f58; text-align: center; }
+  .rank-time { font-variant-numeric: tabular-nums; color: #6b7280; flex-shrink: 0; }
+  .rank-row.me .rank-time { color: #059669; }
+  .rank-empty { padding: 20px; font-size: 13px; color: #9ca3af; text-align: center; }
 
   .toast {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     position: fixed;
     bottom: 40px; left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background: #161b22;
-    border: 1px solid #30363d;
-    color: #f0f6fc;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #111827;
     padding: 12px 20px;
     border-radius: 10px;
     font-size: 14px;
@@ -255,7 +258,7 @@
     bottom: 12px; width: 100%;
     text-align: center;
     font-size: 11px;
-    color: #30363d;
+    color: #c4c9d4;
     pointer-events: none;
   }
 </style>
@@ -380,11 +383,27 @@
   var resultRanking = document.getElementById('resultRanking');
 
   var progress = 0;
-  var startTime = Date.now();
+  var activeMs = 0;              // サイトを開いている間だけ進む経過時間
+  var lastResume = Date.now();
   var finalSeconds = 0;
   var myRank = null;
   var gameOver = false;
   var stepTimer = null;
+  var statusHoldUntil = 0;
+
+  // タブが裏に回っている間は時間を止める
+  function getElapsedSec() {
+    var ms = activeMs;
+    if (!document.hidden) ms += Date.now() - lastResume;
+    return Math.floor(ms / 1000);
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      activeMs += Date.now() - lastResume;
+    } else {
+      lastResume = Date.now();
+    }
+  });
 
   // ---------- ステータスメッセージ(日英) ----------
   var earlyMsgs = [
@@ -524,7 +543,135 @@
     { jp: 'ことわざ: 覆水盆に返らず。進捗はたまに返ります...', en: 'Proverb: Spilled water never returns to the tray. This progress bar, however, does return...' },
     { jp: 'ことわざ: 井の中の蛙大海を知らず。この画面は99%の先を知りません...', en: 'Proverb: The frog in the well knows nothing of the sea. This screen knows nothing beyond 99%...' },
     { jp: 'ことわざ: 二兎を追う者は一兎をも得ず。当サイトは一兎も追っていません...', en: 'Proverb: Chase two hares and catch neither. We are chasing zero hares...' },
-    { jp: 'ことわざ: 案ずるより産むが易し。とは限りませんでした...', en: 'Proverb: Doing is easier than fearing. Apparently not always...' }
+    { jp: 'ことわざ: 案ずるより産むが易し。とは限りませんでした...', en: 'Proverb: Doing is easier than fearing. Apparently not always...' },
+
+    // ---- 不条理系・追加 / more absurd ----
+    { jp: 'サーバーに応援の手紙を書いています...', en: 'Writing an encouraging letter to the server...' },
+    { jp: '進捗バーの気持ちを考えています...', en: 'Considering the progress bar\'s feelings...' },
+    { jp: '行方不明の1%に捜索隊を派遣しました...', en: 'A search party has been dispatched for the missing 1%...' },
+    { jp: 'ケーブルを優しく撫でています...', en: 'Gently petting the cables...' },
+    { jp: 'サーバールームの空気を入れ替えています...', en: 'Airing out the server room...' },
+    { jp: '通信速度の神社にお参り中です...', en: 'Visiting the shrine of connection speeds...' },
+    { jp: '読み込み係が寝落ちしました...', en: 'The loading staff has fallen asleep...' },
+    { jp: '残り1%は上司の承認待ちです...', en: 'The final 1% is awaiting management approval...' },
+    { jp: 'データが道に迷ったので地図を送っています...', en: 'The data got lost. Sending it a map...' },
+    { jp: 'Wi-Fiのご機嫌を伺っています...', en: 'Checking on the Wi-Fi\'s mood...' },
+    { jp: '進捗を水増しできないか検討しています...', en: 'Exploring options to inflate the progress...' },
+    { jp: '「100%の作り方」を検索しています...', en: 'Googling "how to make 100%"...' },
+    { jp: '他のサイトに応援を要請しました...', en: 'Requesting backup from other websites...' },
+    { jp: '押し入れから予備の1%を探しています...', en: 'Looking for a spare 1% in the closet...' },
+
+    // ---- 自虐系・追加 / more self-deprecating ----
+    { jp: '胃が痛くなってきました...', en: 'My stomach is starting to hurt...' },
+    { jp: '実家に帰りたくなってきました...', en: 'I am starting to miss my hometown...' },
+    { jp: 'こんなはずじゃなかった...', en: 'This was not how it was supposed to go...' },
+    { jp: '適性検査を受け直そうと思います...', en: 'I am thinking of retaking my aptitude test...' },
+    { jp: '履歴書を書き直しています...', en: 'Rewriting my resume...' },
+    { jp: '3年前はエースと呼ばれていました...', en: 'Three years ago, they called me the ace...' },
+    { jp: '深呼吸をしています。効きません...', en: 'Taking deep breaths. Not working...' },
+    { jp: '手汗がすごいです...', en: 'My palms are very sweaty...' },
+    { jp: '笑ってごまかそうとしています...', en: 'Trying to laugh it off...' },
+    { jp: '上司に報告する勇気を溜めています...', en: 'Gathering the courage to report this to my boss...' },
+    { jp: '得意なことは他にあります...', en: 'I am good at other things, I promise...' },
+    { jp: 'モチベーションを読み込んでいます。こちらも99%です...', en: 'Loading motivation. Also stuck at 99%...' },
+    { jp: 'せめて姿勢だけは正しています...', en: 'At least my posture is excellent...' },
+    { jp: '心を無にしています...', en: 'Emptying my mind...' },
+    { jp: '来週から輝く予定です...', en: 'Scheduled to shine starting next week...' },
+    { jp: '褒め言葉なら受け付けています...', en: 'Compliments are still being accepted...' },
+
+    // ---- 哲学系・追加 / more philosophical ----
+    { jp: '完了を知らぬ者は、失敗も知らない...', en: 'He who never finishes never fails...' },
+    { jp: '速さとは何か。遅さの不在に過ぎないのか...', en: 'What is speed, if not the absence of slowness?...' },
+    { jp: 'このバーが進んでいるのか、世界が遅れているのか...', en: 'Is the bar moving forward, or is the world falling behind?...' },
+    { jp: '待合室にこそ、人間の本性は現れる...', en: 'The waiting room is where human nature reveals itself...' },
+    { jp: '「もうすぐ」とは、いつなのか...', en: 'When, exactly, is "soon"?...' },
+    { jp: '読み込みを見つめる時、読み込みもあなたを見つめている...', en: 'As you watch the loading, the loading watches you...' },
+    { jp: '無駄とは、まだ意味を見つけられていないものの別名...', en: '"Useless" is just meaning that has not been found yet...' },
+    { jp: 'すべての「完了」は、誰かの妥協である...', en: 'Every "done" is somebody\'s compromise...' },
+    { jp: '急ぐ理由を、あなたは本当に持っていますか...', en: 'Do you truly have a reason to hurry?...' },
+    { jp: '終わらないことと始まらないこと。罪深いのはどちらか...', en: 'Never ending, or never starting — which is the greater sin?...' },
+    { jp: '画面の前のあなたも、誰かの画面の中かもしれない...', en: 'You, before this screen, may be inside someone else\'s screen...' },
+    { jp: '99は完全なる数。100は蛇足である...', en: '99 is a perfect number. 100 is excess...' },
+    { jp: '待つ者はいつか報われる。出典は不明です...', en: 'The patient are always rewarded. Source: unknown...' },
+    { jp: '時計を見るたび、時間は遅くなる...', en: 'Time slows down every time you check the clock...' },
+    { jp: '希望とは、進捗バーの形をしている...', en: 'Hope is shaped like a progress bar...' },
+    { jp: '考えるのをやめた時、終わるのかもしれない。やめられますか...', en: 'Perhaps it ends when you stop thinking about it. Can you stop?...' },
+
+    // ---- 雑学系・追加 / more trivia ----
+    { jp: '雑学: ラッコは寝る時に流されないよう手をつなぎます...', en: 'Trivia: Sea otters hold hands while sleeping so they do not drift apart...' },
+    { jp: '雑学: フラミンゴの片足立ちは疲れにくい姿勢といわれます...', en: 'Trivia: Standing on one leg is said to be less tiring for flamingos...' },
+    { jp: '雑学: 日本の一円玉は1グラムちょうどです...', en: 'Trivia: The Japanese 1-yen coin weighs exactly 1 gram...' },
+    { jp: '雑学: カンガルーは後ろに歩けません...', en: 'Trivia: Kangaroos cannot walk backward...' },
+    { jp: '雑学: 東京タワーの高さは333mです...', en: 'Trivia: Tokyo Tower is 333 meters tall...' },
+    { jp: '雑学: 人間の小腸は6〜7mあります...', en: 'Trivia: The human small intestine is 6 to 7 meters long...' },
+    { jp: '雑学: 「刹那」は約75分の1秒とされます...', en: 'Trivia: A "setsuna" (instant) is said to be about 1/75th of a second...' },
+    { jp: '雑学: クラゲには脳がありません。それでも生きていけます...', en: 'Trivia: Jellyfish have no brain. They manage just fine...' },
+    { jp: '雑学: バッタは体長の20倍ジャンプできます...', en: 'Trivia: Grasshoppers can jump 20 times their body length...' },
+    { jp: '雑学: ペンギンにも膝があります...', en: 'Trivia: Penguins do have knees...' },
+    { jp: '雑学: 月は毎年約3.8cmずつ地球から離れています...', en: 'Trivia: The Moon drifts about 3.8cm away from Earth every year...' },
+    { jp: '雑学: 「www」の読み方に正式な決まりはありません...', en: 'Trivia: There is no official way to pronounce "www"...' },
+    { jp: '雑学: 世界のインターネットの大半は海底ケーブルを通っています...', en: 'Trivia: Most of the world\'s internet travels through undersea cables...' },
+    { jp: '雑学: 牛には親友がいるといわれます...', en: 'Trivia: Cows are said to have best friends...' },
+    { jp: '雑学: ハムスターの頬袋は肩のあたりまで広がります...', en: 'Trivia: A hamster\'s cheek pouches extend to its shoulders...' },
+    { jp: '雑学: 山手線は1周約1時間です。この読み込みより有意義です...', en: 'Trivia: Tokyo\'s Yamanote Line loop takes about an hour. More productive than this loading...' },
+    { jp: '雑学: 亀は甲羅から出られません。甲羅は背骨です...', en: 'Trivia: Turtles cannot leave their shells. The shell is their spine...' },
+    { jp: '雑学: 639年かけて演奏中の曲が実在します。仲間かもしれません...', en: 'Trivia: A piece of music is currently being performed over 639 years. A kindred spirit...' },
+    { jp: '雑学: ミツバチはダンスで仲間に場所を伝えます...', en: 'Trivia: Honeybees communicate locations by dancing...' },
+    { jp: '雑学: ナマコは内臓を出しても再生できます...', en: 'Trivia: Sea cucumbers can regenerate their internal organs...' },
+
+    // ---- 教育系・追加 / more educational ----
+    { jp: '1GBは約10億バイトです。現在0バイト読み込み中です...', en: '1GB is about a billion bytes. We are currently loading zero of them...' },
+    { jp: '「Wi-Fi」は実は何かの略語ではありません...', en: '"Wi-Fi" does not actually stand for anything...' },
+    { jp: '富士山の高さは3776mです...', en: 'Mt. Fuji is 3,776 meters tall...' },
+    { jp: '心臓は1日に約10万回打ちます。あなたのは今少し速いかも...', en: 'Your heart beats about 100,000 times a day. Yours may be a bit faster right now...' },
+    { jp: '光年は時間ではなく距離の単位です...', en: 'A light-year measures distance, not time...' },
+    { jp: '虫歯は自然には治りません。待っても無駄なものもあるのです...', en: 'Cavities do not heal on their own. Some things are not worth waiting for...' },
+    { jp: '「エッセイ」の語源は「試み」です。当サイトも試みです...', en: '"Essay" originally means "an attempt." So is this site...' },
+    { jp: '日本語で「ん」から始まる言葉はほとんどありません...', en: 'Almost no Japanese words begin with "n" (ん)...' },
+    { jp: '99%とは100分の99。あと100分の1です...', en: '99% means 99 out of 100. Just 1 out of 100 to go...' },
+    { jp: '気圧が低いと水は100℃未満で沸騰します...', en: 'At low air pressure, water boils below 100°C...' },
+    { jp: '血液は約1分で体を1周します...', en: 'Your blood circulates your entire body in about a minute...' },
+    { jp: 'ネットの「クッキー」の名前はお菓子が由来です...', en: 'Internet "cookies" are named after actual cookies...' },
+    { jp: '世界の標準時はイギリスのグリニッジが基準です...', en: 'World time is based on Greenwich, England...' },
+    { jp: '「秒」はセシウム原子の振動で定義されています...', en: 'The second is defined by the vibrations of a cesium atom...' },
+    { jp: '音速の飛行機はありますが、この読み込みより遅い飛行機はありません...', en: 'Planes can outrun sound. No plane is slower than this loading...' },
+    { jp: 'パンダの指は7本に見えますが、2本は骨の突起です...', en: 'Pandas appear to have seven fingers. Two are actually bone protrusions...' },
+
+    // ---- 教訓系・追加 / more life lessons ----
+    { jp: '準備に時間をかけた者は本番に強い。当サイトは永遠に準備中です...', en: 'The well-prepared shine when it counts. We are in eternal preparation...' },
+    { jp: '怒っても進捗は進みません。実証済みです...', en: 'Anger does not speed up progress. We have verified this...' },
+    { jp: 'できない約束はしないこと。当サイトは「読み込み中」としか言っていません...', en: 'Never promise what you cannot deliver. We only ever said "loading"...' },
+    { jp: '人を待たせたら、まず謝ること。すみません...', en: 'If you keep someone waiting, apologize first. We are sorry...' },
+    { jp: 'うまくいかない日は、早く寝るに限ります...', en: 'On days when nothing works, just go to bed early...' },
+    { jp: '見守ることも立派な役割です。あなたのことです...', en: 'Watching over something is a noble role. That means you...' },
+    { jp: '引き際を知ることも、才能のひとつです...', en: 'Knowing when to step away is also a talent...' },
+    { jp: 'つらい時こそ笑ってみましょう。無理にとは言いません...', en: 'Try smiling in hard moments. No pressure, though...' },
+    { jp: '数字に一喜一憂しないこと。特にこの数字には...', en: 'Do not let numbers sway your mood. Especially this one...' },
+    { jp: '待ち時間は、心の余裕を測るものさしです...', en: 'Waiting time is a ruler that measures your composure...' },
+    { jp: '質問することは恥ではありません。「いつ終わるの?」以外は...', en: 'No question is shameful. Except "when will this finish?"...' },
+    { jp: '環境のせいにする前に自分を疑え。今回は環境のせいです...', en: 'Doubt yourself before blaming your environment. This time, it is the environment...' },
+    { jp: '逃した魚は大きく見えるもの。1%も大きく見えます...', en: 'The fish that got away always looks bigger. So does this 1%...' },
+    { jp: '感謝を忘れずに。99%までは読み込んだので...', en: 'Stay grateful. We did load 99%, after all...' },
+    { jp: '完了だけが成功ではありません。と、信じています...', en: 'Finishing is not the only form of success. We choose to believe this...' },
+    { jp: '「時間を返せ」と思ったら、それはもう学びです...', en: 'If you want your time back — congratulations, that is a lesson learned...' },
+
+    // ---- ことわざ系・追加 / more proverbs ----
+    { jp: 'ことわざ: 雨降って地固まる。降りっぱなしですが...', en: 'Proverb: After rain, the ground hardens. It has yet to stop raining...' },
+    { jp: 'ことわざ: 早起きは三文の徳。夜更かしでこれを見ているあなたへ...', en: 'Proverb: The early bird gets the worm. A note to you, watching this at midnight...' },
+    { jp: 'ことわざ: 花より団子。団子より完了...', en: 'Proverb: Dumplings over flowers. Completion over dumplings...' },
+    { jp: 'ことわざ: 灯台下暗し。1%は意外と近くにあるのかもしれません...', en: 'Proverb: It is darkest under the lighthouse. The 1% may be closer than we think...' },
+    { jp: 'ことわざ: 縁の下の力持ち。当サーバーは縁の下で休んでいます...', en: 'Proverb: The unsung hero toils beneath the floor. Our server is napping there instead...' },
+    { jp: 'ことわざ: 蛙の子は蛙。遅いサイトの子も遅いサイト...', en: 'Proverb: The child of a frog is a frog. The child of a slow site is a slow site...' },
+    { jp: 'ことわざ: 三人寄れば文殊の知恵。サーバーは1台です...', en: 'Proverb: Three heads are better than one. We have exactly one server...' },
+    { jp: 'ことわざ: 論より証拠。証拠がこの画面です...', en: 'Proverb: Evidence over argument. The evidence is this screen...' },
+    { jp: 'ことわざ: 石橋を叩いて渡る。叩きすぎてまだ渡っていません...', en: 'Proverb: Tap the stone bridge before crossing. We tapped so much we never crossed...' },
+    { jp: 'ことわざ: 出る杭は打たれる。だから99%で止まっています...', en: 'Proverb: The nail that sticks out gets hammered. Hence we stop at 99%...' },
+    { jp: 'ことわざ: 芸は身を助ける。当サイトはローディング芸で生きています...', en: 'Proverb: A skill will save you. Ours is the art of loading...' },
+    { jp: 'ことわざ: 笑う門には福来る。まず笑ってみてください...', en: 'Proverb: Fortune visits the laughing home. Go on, try laughing...' },
+    { jp: 'ことわざ: 千里の道も一歩から。九百九十九里まで来ました...', en: 'Proverb: A thousand miles begins with a step. We have come 999 miles...' },
+    { jp: 'ことわざ: 明日は明日の風が吹く。読み込みは明日も続きます...', en: 'Proverb: Tomorrow brings its own wind. And its own loading...' },
+    { jp: 'ことわざ: 備えあれば憂いなし。備えていませんでした...', en: 'Proverb: Preparedness prevents sorrow. We were not prepared...' },
+    { jp: 'ことわざ: 良薬は口に苦し。この待ち時間も何かの薬かもしれません...', en: 'Proverb: Good medicine tastes bitter. Perhaps this wait is medicine too...' }
   ];
 
   var regressMsgs = [
@@ -608,6 +755,7 @@
         progress = Math.max(70, 99 - drop);
         fill.classList.add('regress');
         setStatus(pick(regressMsgs));
+        statusHoldUntil = Date.now() + 4000;
         setTimeout(function () { fill.classList.remove('regress'); }, 1200);
         render();
         stepTimer = setTimeout(step, 1800);
@@ -617,14 +765,13 @@
 
     if (progress > 99) progress = 99;
     render();
-    updateStatus();
     stepTimer = setTimeout(step, delay);
   }
 
   // ---------- 時計 & 称号 ----------
   setInterval(function () {
     if (gameOver) return;
-    var sec = Math.floor((Date.now() - startTime) / 1000);
+    var sec = getElapsedSec();
     elapsedEl.textContent = '経過時間 ' + fmt(sec);
 
     if (milestoneIndex < milestones.length && sec >= milestones[milestoneIndex].sec) {
@@ -646,7 +793,7 @@
   giveupBtn.addEventListener('click', function () {
     gameOver = true;
     if (stepTimer) clearTimeout(stepTimer);
-    finalSeconds = Math.floor((Date.now() - startTime) / 1000);
+    finalSeconds = getElapsedSec();
 
     confirmOverlay.classList.add('hidden');
     loadingScreen.classList.add('hidden');
@@ -762,8 +909,8 @@
         var rows = results[0];
         myRank = results[1];
         nickForm.classList.add('hidden');
-        rankNote.innerHTML = 'あなたは世界 <b style="color:#7ee2a8">' + myRank + '位</b> です<br>' +
-          '<span style="font-size:11px;font-style:italic;color:#484f58">You are ranked #' + myRank + ' in the world</span>';
+        rankNote.innerHTML = 'あなたは世界 <b style="color:#059669">' + myRank + '位</b> です<br>' +
+          '<span style="font-size:11px;font-style:italic;color:#9ca3af">You are ranked #' + myRank + ' in the world</span>';
         rankNote.classList.remove('hidden');
         renderRanking(resultRanking, rows, name, finalSeconds);
         resultRanking.classList.remove('hidden');
@@ -801,6 +948,13 @@
   setInterval(function () {
     if (!gameOver) document.title = pick(titles);
   }, 8000);
+
+  // ステータスは4.5秒ごとに更新
+  setInterval(function () {
+    if (gameOver) return;
+    if (Date.now() < statusHoldUntil) return;
+    updateStatus();
+  }, 4500);
 
   render();
   step();
